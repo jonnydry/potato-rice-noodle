@@ -2,7 +2,7 @@
 
 You can always rely on Potato.Rice.Noodle to solve hunger with comfort and a little surprise.
 
-An indecisive, tired person picks one base — potato, rice, or noodle — and gets cookable ideas along a ladder: a quick version, a richer one, and a more advanced take on the same idea. No accounts. No recipe API. The dishes live in `recipes.js`.
+An indecisive, tired person picks one base — potato, rice, or noodle — and gets cookable ideas along a ladder: a quick version, a richer one, and a more advanced take on the same idea. No accounts. No recipe API. The dishes live in `potato.js`, `rice.js`, and `noodle.js`.
 
 ## Try it
 
