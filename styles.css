@@ -1,0 +1,399 @@
+:root {
+  color-scheme: light;
+  --paper: #f3e7d6;
+  --paper-deep: #e7d3b8;
+  --card: #fffaf3;
+  --ink: #2c211b;
+  --muted: #5e4c42;
+  --clay: #c45c38;
+  --clay-deep: #9a4328;
+  --line: rgba(44, 33, 27, 0.14);
+  --serif: "Fraunces", "Liberation Serif", Georgia, serif;
+  --sans: "Source Sans 3", Cantarell, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 420px at 50% -8%, rgba(255, 244, 226, 0.95), transparent 55%),
+    radial-gradient(700px 380px at 100% 8%, rgba(222, 164, 112, 0.2), transparent 46%),
+    var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.5;
+}
+
+::selection {
+  background: #f0c7b4;
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--clay);
+  outline-offset: 3px;
+}
+
+.wrap {
+  width: min(40rem, calc(100% - 2.4rem));
+  margin: 0 auto;
+  padding: 2.2rem 0 4.5rem;
+}
+
+.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.35rem 1rem;
+  margin-bottom: 2.4rem;
+  padding-bottom: 0.9rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 1.35rem;
+  font-weight: 560;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.dot {
+  color: var(--clay);
+}
+
+.tagline {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+h1,
+h2,
+.base-name,
+.idea-title {
+  font-family: var(--serif);
+  font-weight: 560;
+  letter-spacing: -0.025em;
+}
+
+h1 {
+  margin: 0.35rem 0 0.7rem;
+  font-size: clamp(2.15rem, 6vw, 3.15rem);
+  line-height: 1.08;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.55rem;
+}
+
+.lede,
+.note,
+.base-whisper,
+.idea-blurb,
+.surprise-note,
+.missing p {
+  color: var(--muted);
+}
+
+.lede {
+  margin: 0 0 1.6rem;
+  max-width: 36em;
+  font-size: 1.125rem;
+}
+
+.bases {
+  display: flex;
+  flex-direction: column;
+  margin: 0.4rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.base-choice {
+  display: block;
+  padding: 1.05rem 0.35rem 1.15rem;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+  transition: background 160ms ease;
+}
+
+.bases li:last-child .base-choice {
+  border-bottom: 1px solid var(--line);
+}
+
+.base-choice:hover {
+  background: rgba(255, 250, 243, 0.72);
+}
+
+.base-name {
+  display: block;
+  font-size: clamp(1.8rem, 4vw, 2.25rem);
+  line-height: 1.15;
+}
+
+.base-meta {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--clay-deep);
+  font-size: 0.95rem;
+}
+
+.base-whisper {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.surprise-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  margin: 0 0 2.2rem;
+}
+
+.surprise {
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  background: var(--clay);
+  color: #fffaf4;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.72rem 1.05rem;
+}
+
+.surprise:hover {
+  background: var(--clay-deep);
+}
+
+.surprise.quiet {
+  background: transparent;
+  color: var(--clay-deep);
+  box-shadow: inset 0 0 0 1.5px #e0b197;
+}
+
+.surprise.quiet:hover {
+  background: rgba(255, 250, 243, 0.85);
+}
+
+.surprise-note {
+  margin: 0;
+}
+
+.family {
+  margin: 0 0 2.3rem;
+}
+
+.note {
+  margin: 0.35rem 0 0.8rem;
+}
+
+.ladder {
+  list-style: none;
+  margin: 0 0 0 0.35rem;
+  padding: 0 0 0 1.05rem;
+  border-left: 2px solid var(--paper-deep);
+}
+
+.idea {
+  position: relative;
+  display: block;
+  padding: 0.85rem 0.7rem 1rem;
+  text-decoration: none;
+  border-radius: 12px;
+  transition: background 160ms ease;
+}
+
+.idea::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.05rem - 5px);
+  top: 1.2rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  border: 2px solid var(--clay);
+  border-radius: 50%;
+  background: var(--paper);
+}
+
+.ladder li:last-child .idea::before {
+  background: var(--clay);
+}
+
+.idea:hover {
+  background: rgba(255, 250, 243, 0.78);
+}
+
+.idea-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.idea-rung,
+.kicker,
+.crumb {
+  color: var(--clay-deep);
+  font-size: 0.95rem;
+}
+
+.idea-time {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.idea-title {
+  display: block;
+  margin-top: 0.12rem;
+  font-size: 1.45rem;
+  line-height: 1.2;
+}
+
+.idea-blurb {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.crumb {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.crumb:hover {
+  text-decoration: underline;
+}
+
+.volunteered {
+  margin: 0.8rem 0 0;
+  color: var(--clay-deep);
+  font-family: var(--serif);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.recipe-blurb {
+  margin: 0 0 1.4rem;
+  max-width: 38em;
+  font-size: 1.2rem;
+}
+
+.panel {
+  margin: 1.5rem 0;
+}
+
+.panel h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.55rem;
+}
+
+.ingredients {
+  list-style: none;
+  margin: 0;
+  padding: 0.2rem 0 0.2rem 0.9rem;
+  border-left: 3px solid #e2b08a;
+}
+
+.ingredient {
+  display: flex;
+  gap: 0.65rem;
+  align-items: flex-start;
+  margin: 0.4rem 0;
+  cursor: pointer;
+}
+
+.ingredient input {
+  margin-top: 0.35rem;
+  accent-color: var(--clay);
+}
+
+.ingredient:has(input:checked) span {
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.steps {
+  margin: 0;
+  padding-left: 1.5rem;
+}
+
+.steps li {
+  margin: 0 0 0.95rem;
+  padding-left: 0.35rem;
+}
+
+.steps li::marker {
+  color: var(--clay);
+  font-family: var(--serif);
+  font-size: 1.15rem;
+}
+
+.siblings {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.8rem 0 1.4rem;
+}
+
+.sibling {
+  display: block;
+  padding: 0.75rem 0.2rem;
+  border-top: 1px solid var(--line);
+  text-decoration: none;
+}
+
+.sibling span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.sibling strong {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 560;
+}
+
+.missing h1 {
+  font-size: 2.2rem;
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    width: min(40rem, calc(100% - 1.6rem));
+    padding-top: 1.4rem;
+  }
+
+  .idea-top {
+    flex-direction: column;
+    gap: 0.1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
